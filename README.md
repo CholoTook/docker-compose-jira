@@ -4,7 +4,7 @@
 
 ```bash
 vi MySQL/setup-jira.sql ...
-docker build MySQL
+docker build MySQL/
 ```
 
 ## Step 1

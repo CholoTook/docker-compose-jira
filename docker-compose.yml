@@ -22,6 +22,7 @@ services:
 
   netshoot:
     image: nicolaka/netshoot
+    entrypoint: sleep 600
     networks:
       - jira
 
