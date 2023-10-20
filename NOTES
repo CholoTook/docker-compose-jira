@@ -1,0 +1,7 @@
+docker run -v /home/dan/Geromics/Jira/vanilla/application-data/jira:/var/atlassian/application-data/jira --name=jira -d -p 8080:8080 atlassian/jira-software
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.1.0.zip
+docker cp mysql-connector-j-8.1.0.zip jira:/opt/atlassian/jira/lib
+docker restart jira
+unzip mysql-connector-j-8.1.0.zip
+docker cp mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar jira:/opt/atlassian/jira/lib
+docker restart jira
