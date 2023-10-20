@@ -1,0 +1,29 @@
+
+services:
+  jira:
+    build: Jira/
+    ports:
+      - 8080:8080
+    volumes:
+      - ${PWD}/vanilla/application-data/jira:/var/atlassian/application-data/jira
+    networks:
+      - jira
+    links:
+      - mysql
+
+  mysql:
+    build: MySQL/
+    ports:
+      - 3306:3306
+    networks:
+      - jira
+    env_file:
+      - .my.env
+
+  netshoot:
+    image: nicolaka/netshoot
+    networks:
+      - jira
+
+networks:
+  jira:
