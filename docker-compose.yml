@@ -12,9 +12,13 @@ services:
       - mysql
 
   mysql:
-    build: MySQL/
+    image: mysql:8.0
     ports:
       - 3306:3306
+    volumes:
+      - ${PWD}/conf.d:/etc/mysql/conf.d
+      - ${PWD}/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ${PWD}/data:/var/lib/mysql
     networks:
       - jira
     env_file:
