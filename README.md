@@ -22,3 +22,10 @@ docker-compose up -d
 ```
 
 ## Step 3
+
+
+
+## Rough notes
+
+docker build Jira/
+docker build MySQL/
